@@ -3,9 +3,10 @@ package de.kaibra.aoc2021
 import org.scalatest.flatspec.AnyFlatSpec
 import org.scalatest.matchers.should.Matchers
 
-class Day1BSpec extends AnyFlatSpec with Matchers {
-  "The Hello object" should "say hello" in {
-    Day1b.day1SolutionB(Seq(
+class Day1aSpec extends AnyFlatSpec with Matchers {
+
+  "Day1a" should "find the correct solution" in {
+    Day1a.day1SolutionA(Seq(
       199,
       200,
       208,
@@ -16,6 +17,6 @@ class Day1BSpec extends AnyFlatSpec with Matchers {
       269,
       260,
       263
-    )) shouldEqual 5
+    )) shouldEqual 7
   }
 }
