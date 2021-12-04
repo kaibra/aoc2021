@@ -1,5 +1,6 @@
 package de.kaibra.aoc2021
 
+import scala.annotation.tailrec
 import scala.collection.mutable.ArrayBuffer
 import scala.io.Source
 
@@ -10,11 +11,12 @@ class Board(val numbers: Vector[Int],
   private val AND = (a: Int, b: Int) => a & b
   private var lastNumber: Int = -1
 
-  def next(number: Int): Unit = {
+  def next(number: Int): Board = {
     lastNumber = number
     val index = numbers.indexOf(number)
     if (index >= 0)
       refs(index) = 1
+    this
   }
 
   def isBingo: Boolean = {
@@ -62,7 +64,7 @@ object Day4a {
     play.getOrElse(-1)
   }
 
-  private def getBoards(input: Seq[String]) = {
+  def getBoards(input: Seq[String]): Seq[Board] = {
     val splitIndexes = input
       .zipWithIndex.filter(_._1.isEmpty)
       .map(_._2) :+ input.length
@@ -72,7 +74,7 @@ object Day4a {
       .toSeq
   }
 
-  private def getNumbers(input: Seq[String]) = {
+  def getNumbers(input: Seq[String]): Seq[Int] = {
     input.head.split(",").map(_.toInt).toSeq
   }
 
