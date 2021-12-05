@@ -1,6 +1,6 @@
 package de.kaibra.aoc2021
 
-import de.kaibra.aoc2021.Day5a.{HORIZONTAL, RangeCreator, VERTICAL, range}
+import de.kaibra.aoc2021.Day5a.{VERTICAL, RangeCreator, HORIZONTAL, range}
 
 import scala.io.Source
 
@@ -12,7 +12,7 @@ object Day5b {
   }
 
   def day5SolutionB(input: Seq[String]): Int = {
-    Day5a.day5SolutionA(input, HORIZONTAL, VERTICAL, DIAGONAL)
+    Day5a.day5SolutionA(input, VERTICAL, HORIZONTAL, DIAGONAL)
   }
 
   def main(args: Array[String]): Unit = {

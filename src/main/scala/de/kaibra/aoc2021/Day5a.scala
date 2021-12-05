@@ -16,11 +16,11 @@ object Day5a {
     if (min == p1) r else r.reverse
   }
 
-  val HORIZONTAL: RangeCreator = {
+  val VERTICAL: RangeCreator = {
     case (x1, y1, x2, y2) if x1 == x2 => range(y1, y2).map((x1, _))
   }
 
-  val VERTICAL: RangeCreator = {
+  val HORIZONTAL: RangeCreator = {
     case (x1, y1, x2, y2) if y1 == y2 => range(x1, x2).map((_, y1))
   }
 
@@ -36,6 +36,6 @@ object Day5a {
 
   def main(args: Array[String]): Unit = {
     val input = Source.fromResource("day5_input.txt").getLines.toSeq
-    println(day5SolutionA(input, HORIZONTAL, VERTICAL))
+    println(day5SolutionA(input, VERTICAL, HORIZONTAL))
   }
 }
